@@ -1,6 +1,5 @@
 {
   "name": "blog",
   "region": "us-east-1",
-  "main": "stacks/index.ts",
-  "profile": "rhys"
+  "main": "stacks/index.ts"
 }

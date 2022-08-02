@@ -13,6 +13,8 @@ export default function handleRequest(
   );
 
   responseHeaders.set("Content-Type", "text/html");
+  responseHeaders.set("Cache-Control", "public, max-age=300, s-maxage=3600");
+  responseHeaders.set("Vary", "Accept-Encoding");
 
   return new Response("<!DOCTYPE html>" + markup, {
     status: responseStatusCode,

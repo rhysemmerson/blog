@@ -5,6 +5,10 @@ export function MyStack({ stack }: StackContext) {
   const site = new RemixSite(stack, "Blog", {
     path: "web/",
     disablePlaceholder: true,
+    customDomain: {
+      domainName: "rhysdevs.com",
+      domainAlias: "www.rhysdevs.com",
+    },
   });
 
   // Add the site's URL to stack output
