@@ -4,8 +4,16 @@
   "scripts": {
     "build": "remix build",
     "dev": "sst-env -- remix dev",
-    "start": "remix-serve build"
+    "start": "remix-serve build",
+    "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
+    "lint:fix": "eslint --fix --cache --cache-location ./node_modules/.cache/eslint ."
   },
+  "eslintIgnore": [
+    "/build",
+    "/node_modules",
+    "/server/index.js",
+    "/public/build"
+  ],
   "dependencies": {
     "@remix-run/node": "^1.6.7",
     "@remix-run/react": "^1.6.7",
