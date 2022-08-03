@@ -88,6 +88,9 @@ jobs:
           VER=`node --version`; echo "Node ver:   $VER"
           VER=`npm --version`; echo "npm ver:    $VER"
 
+      - name: show envs
+        run: env
+
       - name: 📥 Download deps
         uses: bahmutov/npm-install@v1
         with:
@@ -100,4 +103,4 @@ jobs:
           aws_secret_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" > ./.awscredenitals
 
       - name: 🚀 Staging Deploy
-        run: AWS_SHARED_CREDENTIALS_FILE="$(pwd)/.awscredenitals" npx sst deploy --stage staging
+        run: export AWS_SHARED_CREDENTIALS_FILE="$(pwd)/.awscredenitals" && npx sst deploy --stage staging
