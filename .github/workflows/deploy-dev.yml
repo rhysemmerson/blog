@@ -94,7 +94,7 @@ jobs:
           useLockFile: false
 
       - name: Configure AWS Credentials
-        run: < 
+        run: >
           mkdir ~/.aws && printf "[default]\n\
           aws_access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}\n\
           aws_secret_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" > ~/.aws/credenitals
