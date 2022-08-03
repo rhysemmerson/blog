@@ -88,13 +88,16 @@ jobs:
           VER=`node --version`; echo "Node ver:   $VER"
           VER=`npm --version`; echo "npm ver:    $VER"
 
-      - name: show envs
-        run: env
-
       - name: 📥 Download deps
         uses: bahmutov/npm-install@v1
         with:
           useLockFile: false
+
+      - name: 📥 Download remix deps
+        uses: bahmutov/npm-install@v1
+        with:
+          useLockFile: false
+          working-directory: ./web
 
       - name: Configure AWS Credentials
         run: |
