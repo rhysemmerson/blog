@@ -97,10 +97,13 @@ jobs:
           useLockFile: false
 
       - name: Configure AWS Credentials
-        run: >
-          mkdir $HOME/.aws && printf "[default]\n
-          aws_access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}\n
+        run: |
+          mkdir $HOME/.aws 
+          printf "[default]\n\
+          aws_access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}\n\
           aws_secret_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" > $HOME/.aws/credenitals
+          ls -l $HOME
+          ls -l $HOME/.aws
 
       - name: 🚀 Staging Deploy
         run: npx sst deploy --stage staging
